@@ -6,13 +6,13 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:12:29 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/21 18:09:27 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/25 10:34:59 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_strlcpy(char *dst, char *src, unsigned long dstsize)
+unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dstsize)
 {
 	unsigned long	srcsize;
 	unsigned long	pos;

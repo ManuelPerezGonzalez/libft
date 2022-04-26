@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/25 13:22:19 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/25 11:34:43 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h> */
+/* #include <stdio.h>
+#include <stdlib.h>
+#include <string.h> */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, unsigned long len)
 {
-	int	pos;
+	unsigned int	slen;
+	char			*substr;
 
-	pos = ft_strlen(s);
-	while (pos > 0)
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (slen < start)
 	{
-		if ((unsigned char)s[pos] == (unsigned char)c)
-			return ((char *)s + pos);
-		pos--;
+		substr = (char *)malloc(sizeof(char));
+		if (!substr)
+			return (NULL);
+		substr[0] = '\0';
+		return (NULL);
 	}
-	return (0);
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!substr)
+		return (NULL);
+	ft_strlcpy(substr, s + start, len + 1);
+	return (substr);
 }
 
 /* int	main(void)
 {
 	char	str[50] = "hola que tal estamos";
-
-	printf("%s", ft_strrchr(str, 'a'));
+	
+	printf("%s\n", ft_substr(str, 2, 10));
 	return (0);
 }
  */

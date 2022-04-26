@@ -6,13 +6,13 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 14:12:33 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:38:05 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
+/* #include <stdio.h>
+#include <string.h> */
 
 void	*ft_memmove(void *dst, const void *src, unsigned long len)
 {
@@ -40,18 +40,19 @@ void	*ft_memmove(void *dst, const void *src, unsigned long len)
 	return (dst);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
-	char			dst1[50] = "que ase";
-	char			dst2[50] = "que ase";
-	char			src[50] = "hola como estamos compañero";
+	char			dst1[50] = "hey, how are you my friend";
+	char			dst2[50] = "hey, how are you my friend";
+	char			src[50] = "whatcha doin'";
 	unsigned long	n;
 
-	n = 5;
+	n = 7;
 	printf("dst original: %s\n", dst1);
 	printf("src: %s\n", src);
 	ft_memmove(dst1, src, n);
-	printf("dst modificado: %s\n", dst1);
+	printf("dst modified: %s\n", dst1);
 	memmove(dst2, src, n);
-	printf("dst modificado: %s", dst2);
-}*/
+	printf("dst modified: %s", dst2);
+}
+ */

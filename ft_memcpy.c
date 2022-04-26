@@ -6,15 +6,14 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 12:18:10 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/25 18:10:32 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, unsigned long n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src,
+		unsigned long n)
 {
 	void			*orig_dst;
 	unsigned int	pos;
@@ -35,7 +34,7 @@ void	*ft_memcpy(void *dst, const void *src, unsigned long n)
 	return (orig_dst);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char			dst1[50] = "hola como estamos compañero";
 	char			dst2[50] = "hola como estamos compañero";
@@ -49,4 +48,5 @@ void	*ft_memcpy(void *dst, const void *src, unsigned long n)
 	printf("dst modificado: %s\n", dst1);
 	memcpy(dst2, src, n);
 	printf("dst modificado: %s", dst2);
-}*/
+}
+ */

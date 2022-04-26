@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 15:12:29 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/21 18:38:01 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:23:15 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,13 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned long size)
 		pos++;
 	return ((unsigned char)s1[pos] - (unsigned char)s2[pos]);
 }
+
+/* int	main(void)
+{
+	char	str1[50] = "hola que";
+	char	str2[50] = "tal estas?";
+
+	printf("%d\n", ft_strncmp(str2, str1, 2));
+	return (0);
+}
+ */
