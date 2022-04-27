@@ -6,13 +6,11 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 16:08:44 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:41:03 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
 {

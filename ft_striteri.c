@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/26 11:41:07 by maperez-         ###   ########.fr       */
+/*   Created: 2022/04/27 14:13:14 by maperez-          #+#    #+#             */
+/*   Updated: 2022/04/27 17:30:44 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_striteri(char *s, void (*f)(unsigned iny, char*))
 {
-	unsigned int	len;
-	unsigned int	pos;
-	char			*dst;
+	ssize_t	pos;
 
-	len = ft_strlen(s1);
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
+	if (!s || !f)
+		return ;
 	pos = 0;
-	while (pos < len)
+	while (s[pos])
 	{
-		dst[pos] = s1[pos];
+		f(pos, &s[pos]);
 		pos++;
 	}
-	dst[pos] = '\0';
-	return (dst);
 }
-
-/* int	main(void)
-{
-	printf("%s\n", ft_strdup("hola como estamos"));
-	printf("%s\n", strdup("hola como estamos"));
-	return (0);
-}
- */

@@ -6,13 +6,11 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/25 16:38:05 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:41:04 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <string.h> */
 
 void	*ft_memmove(void *dst, const void *src, unsigned long len)
 {

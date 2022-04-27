@@ -1,41 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/26 11:41:07 by maperez-         ###   ########.fr       */
+/*   Created: 2022/04/27 14:18:52 by maperez-          #+#    #+#             */
+/*   Updated: 2022/04/27 14:41:03 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	len;
-	unsigned int	pos;
-	char			*dst;
-
-	len = ft_strlen(s1);
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
-		return (0);
-	pos = 0;
-	while (pos < len)
-	{
-		dst[pos] = s1[pos];
-		pos++;
-	}
-	dst[pos] = '\0';
-	return (dst);
+	if (!s)
+		return ;
+	write (fd, s, ft_strlen(s));
 }
-
-/* int	main(void)
-{
-	printf("%s\n", ft_strdup("hola como estamos"));
-	printf("%s\n", strdup("hola como estamos"));
-	return (0);
-}
- */

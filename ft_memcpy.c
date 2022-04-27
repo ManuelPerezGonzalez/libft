@@ -6,32 +6,25 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/25 18:10:32 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 14:36:09 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src,
-		unsigned long n)
+void	*ft_memcpy(void *dst, const void *src, unsigned long n)
 {
-	void			*orig_dst;
-	unsigned int	pos;
-	unsigned int	dstlen;
-	unsigned int	srclen;
+	unsigned long	pos;
 
-	if (!dst || !src)
+	if (!dst && !src)
 		return (0);
 	pos = 0;
-	dstlen = ft_strlen(dst);
-	srclen = ft_strlen(src);
-	orig_dst = dst;
-	while (pos < n && pos < dstlen && pos < srclen)
+	while (pos < n)
 	{
 		((unsigned char *)dst)[pos] = ((unsigned char *)src)[pos];
 		pos++;
 	}
-	return (orig_dst);
+	return (dst);
 }
 
 /* int	main(void)

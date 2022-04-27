@@ -6,33 +6,30 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 12:15:25 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 13:58:46 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 void	*ft_memset(void *b, int c, unsigned long len)
 {
 	unsigned int	pos;
-	unsigned int	l;
 
 	pos = 0;
-	l = ft_strlen((unsigned char *)b);
-	while (pos < len && pos < l)
+	while (pos < len)
 	{
-		((unsigned char *)b)[pos] = (unsigned char)c;
+		((unsigned char *)b)[pos] = c;
 		pos++;
 	}
 	return (b);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char	str[50] = "hola que ase";
 
-	printf("%s\n", ft_memset(str, 'B', 5));
-	printf("%s", memset(str, 'B', 5));
-}*/
+	printf("%s\n", ft_memset(str, 'A', 16));
+	printf("%s", memset(str, 'A', 16));
+}
+ */

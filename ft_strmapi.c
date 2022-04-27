@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/26 11:41:07 by maperez-         ###   ########.fr       */
+/*   Created: 2022/04/19 14:16:10 by maperez-          #+#    #+#             */
+/*   Updated: 2022/04/27 14:16:15 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int	len;
-	unsigned int	pos;
-	char			*dst;
+	char	*str;
+	ssize_t	pos;
 
-	len = ft_strlen(s1);
-	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (!dst)
+	if (!s || !f)
+		return (0);
+	str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!str)
 		return (0);
 	pos = 0;
-	while (pos < len)
+	while (s[pos])
 	{
-		dst[pos] = s1[pos];
+		str[pos] = f(pos, s[pos]);
 		pos++;
 	}
-	dst[pos] = '\0';
-	return (dst);
+	str[pos] = '\0';
+	return (str);
 }
-
-/* int	main(void)
-{
-	printf("%s\n", ft_strdup("hola como estamos"));
-	printf("%s\n", strdup("hola como estamos"));
-	return (0);
-}
- */

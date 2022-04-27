@@ -6,13 +6,11 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:46:57 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 12:18:13 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:40:48 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {

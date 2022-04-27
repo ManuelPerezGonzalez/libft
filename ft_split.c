@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 13:22:58 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/26 09:14:32 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/27 17:06:02 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ static char	*ft_create_word(const char *s, int start, int finish)
 
 	pos = 0;
 	word = (char *)malloc(sizeof(char) * (finish - start + 1));
+	if (!word)
+		return (0);
 	while (start < finish)
 	{
 		word[pos] = s[start];
@@ -59,7 +61,7 @@ char	**ft_split(char const *s, char c)
 
 	str = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
 	if (!s || !str)
-		return (NULL);
+		return (0);
 	pos1 = 0;
 	pos2 = 0;
 	index = -1;
@@ -79,16 +81,16 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-/* int	main(void)
+/* int	main(void) NO FUNCIONA
 {
 	char	str[50] = "hola que tal estamos";
 	char	**ptr;
 
 	ptr = ft_split(str, 't');
-	while (ptr != NULL)
+	while (ptr != 0)
 	{
-		printf("%s\n", ptr);
-		ptr = ft_split(NULL, 't');
+		printf("%\n", ptr);
+		ptr = ft_split(0, 't');
 	}
 	return (0);
 }

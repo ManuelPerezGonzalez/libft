@@ -6,13 +6,13 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:24:01 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 12:18:18 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 12:05:30 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

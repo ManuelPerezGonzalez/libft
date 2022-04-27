@@ -6,20 +6,21 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 10:55:23 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/23 11:46:02 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/27 12:07:50 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <stdlib.h>
 
 void	*ft_calloc(unsigned long count, unsigned long size)
 {
 	char			*dst;
-	unsigned int	total;
+	unsigned long	total;
 	unsigned int	pos;
 
+	if ((count >= __SIZE_MAX__ && size > 1)
+		|| (size >= __SIZE_MAX__ && count > 1))
+		return (0);
 	total = count * size;
 	dst = malloc(total);
 	if (!dst)

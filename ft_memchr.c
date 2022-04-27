@@ -6,13 +6,11 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 15:54:26 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:41:01 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 void	*ft_memchr(const void *s, int c, unsigned long n)
 {

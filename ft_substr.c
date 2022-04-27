@@ -6,35 +6,44 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/25 11:34:43 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/27 13:27:47 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <string.h> */
 
-char	*ft_substr(char const *s, unsigned int start, unsigned long len)
+static size_t	ft_min(size_t a, size_t b)
 {
-	unsigned int	slen;
-	char			*substr;
+	if (a > b)
+		return (b);
+	return (a);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	pos;
+	char	*substr;
 
 	if (!s)
-		return (NULL);
-	slen = ft_strlen(s);
-	if (slen < start)
+		return (0);
+	if (ft_strlen(s) < start)
 	{
-		substr = (char *)malloc(sizeof(char));
+		substr = (char *)ft_calloc(sizeof(char), 1);
 		if (!substr)
-			return (NULL);
-		substr[0] = '\0';
-		return (NULL);
-	}
-	substr = (char *)malloc(sizeof(char) * (len + 1));
+			return (0);
+		return (substr);
+	}	
+	substr = (char *)malloc(sizeof(char) * (ft_min(ft_strlen(s), len) + 1));
 	if (!substr)
-		return (NULL);
-	ft_strlcpy(substr, s + start, len + 1);
+		return (0);
+	pos = 0;
+	while (pos != ft_min(ft_strlen(s), len))
+	{
+		substr[pos] = s[start];
+		pos++;
+		start++;
+	}
+	substr[pos] = '\0';
 	return (substr);
 }
 

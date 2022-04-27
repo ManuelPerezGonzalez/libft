@@ -6,13 +6,11 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:28:49 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/22 12:15:52 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/26 11:40:50 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
 
 void	ft_bzero(void *s, unsigned long n)
 {

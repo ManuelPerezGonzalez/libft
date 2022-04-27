@@ -6,30 +6,31 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/25 11:35:56 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/27 10:04:10 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <stdlib.h>
-#include <string.h> */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	s1_len;
-	unsigned int	s2_len;
+	unsigned int	pos1;
+	unsigned int	pos2;
 	char			*str;
 
-	if (!s1 || !s2)
-		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcat(str, s1, s1_len + 1);
-	ft_strlcat(str, s2, s2_len + s1_len + 1);
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if ((!s1 && !s2) || !str)
+		return (0);
+	pos1 = 0;
+	while (s1[pos1] != '\0')
+	{
+		str[pos1] = s1[pos1];
+		pos1++;
+	}
+	pos2 = 0;
+	while (s2[pos2] != '\0')
+		str[pos1++] = s2[pos2++];
+	str[pos1] = '\0';
 	return (str);
 }
 
