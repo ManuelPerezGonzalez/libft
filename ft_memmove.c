@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 09:37:02 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/26 11:41:04 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/28 11:26:10 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	*ft_memmove(void *dst, const void *src, unsigned long len)
 	char			src[50] = "whatcha doin'";
 	unsigned long	n;
 
-	n = 7;
+	n = 17;
 	printf("dst original: %s\n", dst1);
 	printf("src: %s\n", src);
 	ft_memmove(dst1, src, n);

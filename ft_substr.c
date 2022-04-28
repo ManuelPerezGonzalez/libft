@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/27 13:27:47 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/04/28 09:26:20 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	str[50] = "hola que tal estamos";
 	
-	printf("%s\n", ft_substr(str, 2, 10));
+	printf("%s\n", ft_substr(str, 22, 10));
 	return (0);
 }
  */

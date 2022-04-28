@@ -8,7 +8,12 @@ SRCS			=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
 					ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
 
-OBJS			= $(SRCS:.c=.o)
+OBJS			=	$(SRCS:.c=.o)
+
+BONUS			=	ft_lstadd_back.c ft_lstmap.c ft_lstiter.c ft_lstclear.c ft_lstdelone.c \
+					ft_lstsize.c ft_lstlast.c ft_lstadd_front.c ft_lstnew.c
+
+BONUS_OBJS		=	${BONUS:.c=.o}
 
 CC				= gcc
 RM				= rm -f
@@ -19,15 +24,18 @@ all:			${NAME}
 ${NAME}:			$(OBJS)
 				ar -r $(NAME) $(OBJS)
 
+bonus:		$(OBJS) $(BONUS_OBJS)
+			ar crs $(NAME) $(OBJS) $(BONUS_OBJS)
+
 .c.o:
 				${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 clean:
-				$(RM) $(OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean bonus re
