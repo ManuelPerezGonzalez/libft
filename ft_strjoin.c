@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:34:10 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/27 10:04:10 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/05/03 10:58:27 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned int	pos1;
-	unsigned int	pos2;
+	size_t			pos1;
+	size_t			pos2;
 	char			*str;
 
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if ((!s1 && !s2) || !str)
-		return (0);
+		return (NULL);
 	pos1 = 0;
-	while (s1[pos1] != '\0')
+	while (s1[pos1])
 	{
 		str[pos1] = s1[pos1];
 		pos1++;
 	}
 	pos2 = 0;
-	while (s2[pos2] != '\0')
+	while (s2[pos2])
 		str[pos1++] = s2[pos2++];
 	str[pos1] = '\0';
 	return (str);

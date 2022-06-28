@@ -6,12 +6,18 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:47:56 by maperez-          #+#    #+#             */
-/*   Updated: 2022/04/28 16:55:27 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/05/09 11:52:37 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 40
+# endif
+
+# define O_RDONLY	0x0000
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -33,16 +39,16 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 /* LST */
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_lstadd_front(t_list **lst, t_list *new);
-void				ft_lstclear(t_list **lst, void (*del)(void *));
-void				ft_lstdelone(t_list *lst, void (*del)(void *));
-void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+void				ft_lstadd_back_bonus(t_list **lst, t_list *new);
+void				ft_lstadd_front_bonus(t_list **lst, t_list *new);
+void				ft_lstclear_bonus(t_list **lst, void (*del)(void *));
+void				ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
+void				ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+t_list				*ft_lstlast_bonus(t_list *lst);
+t_list				*ft_lstmap_bonus(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-t_list				*ft_lstnew(void *content);
-int					ft_lstsize(t_list *lst);
+t_list				*ft_lstnew_bonus(void *content);
+int					ft_lstsize_bonus(t_list *lst);
 /* PUT */
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
@@ -78,5 +84,13 @@ void				*ft_memchr(const void *s, int c, unsigned long n);
 void				*ft_memcpy(void *dst, const void *src, unsigned long n);
 void				*ft_memmove(void *dst, const void *src, unsigned long len);
 int					ft_memcmp(const void *s1, const void *s2, unsigned long n);
+/* GNL */
+char				*get_next_line(int fd);
+char				*ft_read_save(int fd, char *save);
+char				*ft_get_line(char *save);
+char				*ft_save(char *save);
+size_t				ft_strlen_gnl(const char *s);
+char				*ft_strjoin_gnl(char *s1, char *s2);
+char				*ft_strchr_gnl(const char *s, int c);
 
 #endif
