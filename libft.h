@@ -6,7 +6,7 @@
 /*   By: maperez- <maperez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 08:47:56 by maperez-          #+#    #+#             */
-/*   Updated: 2022/05/09 11:52:37 by maperez-         ###   ########.fr       */
+/*   Updated: 2022/06/28 11:35:57 by maperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 #  define BUFFER_SIZE 40
 # endif
 
-# define O_RDONLY	0x0000
+# define O_RDONLY 0x0000
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdarg.h>
 # include <unistd.h>
 
 typedef struct s_list
@@ -92,5 +93,15 @@ char				*ft_save(char *save);
 size_t				ft_strlen_gnl(const char *s);
 char				*ft_strjoin_gnl(char *s1, char *s2);
 char				*ft_strchr_gnl(const char *s, int c);
+/* PRINTF */
+int					ft_printf(const char *str, ...);
+int					ft_checker(const char *str, va_list args, int pos);
+int					ft_putchar_pf(int c);
+size_t				ft_strlen_pf(const char *s);
+int					ft_putstr_pf(char *s);
+int					ft_putnbr_pf(int nb);
+int					ft_putten(long nb);
+int					ft_puthexmin(unsigned long long nb);
+int					ft_puthexmay(unsigned long long nb);
 
 #endif
